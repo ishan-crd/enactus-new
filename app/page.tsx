@@ -132,10 +132,6 @@ const achievements: Achievement[] = [
 ];
 
 // Icons
-<div className="relative size-8">
-  <Image src={logoImage} alt="Enactus Logo" fill className="object-contain" />
-</div>;
-
 const SearchIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -262,10 +258,10 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#f0f4f4] shadow-sm"
         >
-          <div className="flex items-center justify-between whitespace-nowrap px-4 md:px-10 py-3">
+          <div className="flex items-center justify-between whitespace-nowrap px-4 lg:px-10 py-3">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-4 text-[#111817]"
+              className="flex items-center gap-3 text-[#111817]"
             >
               <div className="relative size-8">
                 <Image
@@ -282,8 +278,8 @@ export default function Home() {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex flex-1 justify-end gap-8">
-              <nav className="flex items-center gap-9">
+            <div className="hidden lg:flex flex-1 justify-end gap-8">
+              <nav className="flex items-center gap-6 xl:gap-9">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.name}
@@ -293,10 +289,20 @@ export default function Home() {
                   >
                     <Link
                       href={item.href}
-                      className="text-[#111817] text-sm font-medium leading-normal hover:text-[#13ebc7] transition-colors duration-200 relative group"
+                      className={`text-sm font-medium leading-normal transition-colors duration-200 relative group ${
+                        item.name === "Home"
+                          ? "text-[#13ebc7]"
+                          : "text-[#111817] hover:text-[#13ebc7]"
+                      }`}
                     >
                       {item.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#13ebc7] transition-all duration-200 group-hover:w-full" />
+                      <span
+                        className={`absolute -bottom-1 left-0 h-0.5 bg-[#13ebc7] transition-all duration-200 ${
+                          item.name === "Home"
+                            ? "w-full"
+                            : "w-0 group-hover:w-full"
+                        }`}
+                      />
                     </Link>
                   </motion.div>
                 ))}
@@ -305,7 +311,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f4f4] text-[#111817] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-[#e5e9e9] transition-colors duration-200"
+                className="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f4f4] text-[#111817] gap-2 text-sm font-bold leading-normal tracking-[0.015em] px-3 hover:bg-[#e5e9e9] transition-colors duration-200"
               >
                 <SearchIcon />
               </motion.button>
@@ -324,7 +330,7 @@ export default function Home() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2"
+              className="lg:hidden p-2"
             >
               <div className="w-6 h-6 flex flex-col justify-around">
                 <motion.span
@@ -355,7 +361,7 @@ export default function Home() {
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="md:hidden bg-white border-t border-[#f0f4f4] overflow-hidden"
+                className="lg:hidden bg-white border-t border-[#f0f4f4] overflow-hidden"
               >
                 <nav className="flex flex-col p-4 space-y-2">
                   {navItems.map((item, index) => (
@@ -368,7 +374,11 @@ export default function Home() {
                       <Link
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="block py-2 px-4 text-[#111817] hover:bg-[#f0f4f4] rounded-lg transition-colors duration-200"
+                        className={`block py-2 px-4 rounded-lg transition-colors duration-200 ${
+                          item.name === "Home"
+                            ? "bg-[#13ebc7] text-[#111817]"
+                            : "text-[#111817] hover:bg-[#f0f4f4]"
+                        }`}
                       >
                         {item.name}
                       </Link>
@@ -380,12 +390,12 @@ export default function Home() {
           </AnimatePresence>
         </motion.header>
 
-        <div className="px-4 md:px-40 flex flex-1 justify-center py-5">
-          <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <div className="px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-40 flex flex-1 justify-center py-5">
+          <div className="layout-content-container flex flex-col max-w-[1200px] flex-1">
             {/* Hero Section */}
             <div className="@container">
               <div className="@[480px]:p-4">
-                <div className="relative flex min-h-[480px] flex-col gap-6 @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 overflow-hidden">
+                <div className="relative flex min-h-[400px] sm:min-h-[480px] lg:min-h-[600px] flex-col gap-6 @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 overflow-hidden">
                   <Image
                     src={heroImage}
                     alt="Hero Background"
@@ -406,7 +416,7 @@ export default function Home() {
                       initial={{ y: 30, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ duration: 0.8, delay: 0.4 }}
-                      className="text-white text-4xl @[480px]:text-5xl font-normal tracking-wide font-[Julius Sans One]"
+                      className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal tracking-wide font-[Julius Sans One] leading-tight"
                     >
                       A HEART FOR BUSINESS
                     </motion.h1>
@@ -415,7 +425,7 @@ export default function Home() {
                       initial={{ y: 30, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ duration: 0.8, delay: 0.6 }}
-                      className="text-white text-4xl @[480px]:text-5xl font-normal tracking-wide font-[Julius Sans One]"
+                      className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal tracking-wide font-[Julius Sans One] leading-tight"
                     >
                       A HEART FOR THE WORLD
                     </motion.h2>
@@ -427,7 +437,7 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: 0.8 }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#13ebc7] text-[#111817] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-[#11d4b4] transition-colors duration-200 z-10"
+                    className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 sm:h-12 sm:px-5 bg-[#13ebc7] text-[#111817] text-sm font-bold leading-normal tracking-[0.015em] sm:text-base hover:bg-[#11d4b4] transition-colors duration-200 z-10"
                   >
                     <span className="truncate">Explore Projects</span>
                   </motion.button>
@@ -436,23 +446,42 @@ export default function Home() {
             </div>
 
             {/* Projects Section */}
-            <section>
+            <section className="mb-8 sm:mb-12">
+              {/* Desktop Title */}
               <motion.h2
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-[#111817] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                className="hidden lg:block text-[#111817] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
               >
                 Our Communities
               </motion.h2>
 
+              {/* Mobile/Tablet Title */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="lg:hidden text-center mb-8 px-4"
+              >
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111817] mb-4">
+                  Our Projects
+                </h1>
+                <p className="text-base sm:text-lg text-[#618983] max-w-2xl mx-auto">
+                  Discover the impactful initiatives we've launched to create
+                  positive change in communities around us.
+                </p>
+              </motion.div>
+
+              {/* Desktop Grid */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 p-4"
+                className="hidden lg:grid lg:grid-cols-4 gap-3 p-4"
               >
                 {projects.map((project) => (
                   <motion.div
@@ -483,84 +512,239 @@ export default function Home() {
                   </motion.div>
                 ))}
               </motion.div>
+
+              {/* Mobile/Tablet Grid - Projects Page Style */}
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-6 px-4"
+              >
+                {projects.map((project) => (
+                  <motion.div
+                    key={project.id}
+                    variants={itemVariants}
+                    whileHover={{
+                      y: -10,
+                      transition: { duration: 0.3 },
+                    }}
+                    className="group"
+                  >
+                    <Link href={`/projects/${project.slug}`}>
+                      <div className="bg-white rounded-xl shadow-sm border border-[#f0f4f4] overflow-hidden cursor-pointer transition-shadow duration-300 group-hover:shadow-lg">
+                        <div
+                          className="w-full h-48 bg-center bg-cover transition-transform duration-300 group-hover:scale-105"
+                          style={{ backgroundImage: `url("${project.image}")` }}
+                        />
+                        <div className="p-6">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                              Active
+                            </span>
+                            <span className="text-xs text-[#618983]">
+                              {project.id === 1 ? "Livelihood" : 
+                               project.id === 2 ? "Education" : 
+                               project.id === 3 ? "Healthcare" : "Technology"}
+                            </span>
+                          </div>
+                          <h3 className="text-lg font-bold text-[#111817] mb-2 group-hover:text-[#13ebc7] transition-colors duration-200">
+                            {project.name}
+                          </h3>
+                          <p className="text-[#618983] text-sm mb-4 line-clamp-2">
+                            {project.description}
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center justify-between text-xs text-[#618983]">
+                              <span>Beneficiaries: {project.id === 1 ? "120" : 
+                                                   project.id === 2 ? "300" : 
+                                                   project.id === 3 ? "2000" : "500"}</span>
+                              <span>
+                                Since {project.id === 1 ? "2023" : 
+                                      project.id === 2 ? "2023" : 
+                                      project.id === 3 ? "2022" : "2024"}
+                              </span>
+                            </div>
+                            <div className="text-xs font-medium text-[#13ebc7]">
+                              {project.id === 1 ? "Income increase of 150%" : 
+                               project.id === 2 ? "Improved learning outcomes by 40%" : 
+                               project.id === 3 ? "Reached 2000+ individuals" : "Digital literacy for 500+ people"}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </motion.div>
             </section>
 
             {/* Events Section */}
-            <section>
+            <section className="mb-8 sm:mb-12">
+              {/* Desktop Title */}
               <motion.h2
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-[#111817] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                className="hidden lg:block text-[#111817] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
               >
                 Our Events
               </motion.h2>
 
-              <div
-                className="overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-                ref={scrollRef}
+              {/* Mobile/Tablet Title */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="lg:hidden text-center mb-8 px-4"
               >
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="flex items-stretch p-4 gap-3"
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111817] mb-4">
+                  Our Events
+                </h1>
+                <p className="text-base sm:text-lg text-[#618983] max-w-2xl mx-auto">
+                  Join us at our upcoming events and workshops designed to create
+                  meaningful impact in our communities.
+                </p>
+              </motion.div>
+
+              {/* Desktop Horizontal Scroll */}
+              <div className="hidden lg:block">
+                <div
+                  className="overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                  ref={scrollRef}
                 >
-                  {events.map((event) => (
-                    <motion.div
-                      key={event.id}
-                      variants={slideInVariants}
-                      whileHover={{
-                        y: -8,
-                        transition: { duration: 0.3 },
-                      }}
-                      className="group"
-                    >
-                      <Link href={`/events/${event.slug}`}>
-                        <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60 cursor-pointer">
-                          <div
-                            className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col transition-transform duration-300 group-hover:scale-105 relative overflow-hidden"
-                            style={{ backgroundImage: `url("${event.image}")` }}
-                          >
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg">
-                              <span className="text-xs font-medium text-[#111817]">
-                                {new Date(event.date).toLocaleDateString(
-                                  "en-US",
-                                  {
-                                    month: "short",
-                                    day: "numeric",
-                                  }
-                                )}
-                              </span>
+                  <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="flex items-stretch p-4 gap-3 sm:gap-4"
+                  >
+                    {events.map((event) => (
+                      <motion.div
+                        key={event.id}
+                        variants={slideInVariants}
+                        whileHover={{
+                          y: -8,
+                          transition: { duration: 0.3 },
+                        }}
+                        className="group"
+                      >
+                        <Link href={`/events/${event.slug}`}>
+                          <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60 sm:min-w-72 cursor-pointer">
+                            <div
+                              className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col transition-transform duration-300 group-hover:scale-105 relative overflow-hidden"
+                              style={{ backgroundImage: `url("${event.image}")` }}
+                            >
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg">
+                                <span className="text-xs font-medium text-[#111817]">
+                                  {new Date(event.date).toLocaleDateString(
+                                    "en-US",
+                                    {
+                                      month: "short",
+                                      day: "numeric",
+                                    }
+                                  )}
+                                </span>
+                              </div>
+                            </div>
+                            <div>
+                              <p className="text-[#111817] text-base font-medium leading-normal group-hover:text-[#13ebc7] transition-colors duration-200">
+                                {event.title}
+                              </p>
+                              <p className="text-[#618983] text-sm font-normal leading-normal">
+                                {event.description}
+                              </p>
                             </div>
                           </div>
-                          <div>
-                            <p className="text-[#111817] text-base font-medium leading-normal group-hover:text-[#13ebc7] transition-colors duration-200">
-                              {event.title}
-                            </p>
-                            <p className="text-[#618983] text-sm font-normal leading-normal">
-                              {event.description}
-                            </p>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Mobile/Tablet Grid - Projects Page Style */}
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-6 px-4"
+              >
+                {events.map((event) => (
+                  <motion.div
+                    key={event.id}
+                    variants={itemVariants}
+                    whileHover={{
+                      y: -10,
+                      transition: { duration: 0.3 },
+                    }}
+                    className="group"
+                  >
+                    <Link href={`/events/${event.slug}`}>
+                      <div className="bg-white rounded-xl shadow-sm border border-[#f0f4f4] overflow-hidden cursor-pointer transition-shadow duration-300 group-hover:shadow-lg">
+                        <div
+                          className="w-full h-48 bg-center bg-cover transition-transform duration-300 group-hover:scale-105 relative"
+                          style={{ backgroundImage: `url("${event.image}")` }}
+                        >
+                          <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg">
+                            <span className="text-xs font-medium text-[#111817]">
+                              {new Date(event.date).toLocaleDateString(
+                                "en-US",
+                                {
+                                  month: "short",
+                                  day: "numeric",
+                                }
+                              )}
+                            </span>
                           </div>
                         </div>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
+                        <div className="p-6">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                              Upcoming
+                            </span>
+                            <span className="text-xs text-[#618983]">
+                              Event
+                            </span>
+                          </div>
+                          <h3 className="text-lg font-bold text-[#111817] mb-2 group-hover:text-[#13ebc7] transition-colors duration-200">
+                            {event.title}
+                          </h3>
+                          <p className="text-[#618983] text-sm mb-4 line-clamp-2">
+                            {event.description}
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center justify-between text-xs text-[#618983]">
+                              <span>Date: {new Date(event.date).toLocaleDateString()}</span>
+                              <span>
+                                {new Date(event.date).getFullYear()}
+                              </span>
+                            </div>
+                            <div className="text-xs font-medium text-[#13ebc7]">
+                              Register Now
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </motion.div>
             </section>
 
             {/* Achievements Section */}
-            <section>
+            <section className="mb-8 sm:mb-12">
               <motion.h2
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-[#111817] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                className="text-[#111817] text-xl sm:text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
               >
                 Our Achievements
               </motion.h2>
@@ -570,7 +754,7 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
-                className="flex flex-wrap gap-4 p-4"
+                className="flex flex-col sm:flex-row flex-wrap gap-4 p-4"
               >
                 {achievements.map((achievement, index) => (
                   <motion.div
@@ -606,13 +790,13 @@ export default function Home() {
             </section>
 
             {/* Convenor Message Section */}
-            <section>
+            <section className="mb-8 sm:mb-16">
               <motion.h2
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-[#111817] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                className="text-[#111817] text-xl sm:text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5"
               >
                 Message from the Convenor
               </motion.h2>
@@ -623,47 +807,132 @@ export default function Home() {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8 }}
                   viewport={{ once: true }}
-                  className="flex flex-col md:flex-row items-stretch justify-between gap-4 rounded-xl"
+                  className="bg-gradient-to-br from-[#f0f4f4] to-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-[#e5e9e9]"
                 >
-                  <div className="flex flex-col gap-1 flex-[2_2_0px]">
-                    <p className="text-[#618983] text-sm font-normal leading-normal">
-                      Mrs. Malabika Pal
-                    </p>
-                    <p className="text-[#111817] text-base font-bold leading-tight">
-                      Convenor, Enactus Miranda House
-                    </p>
-                    <p className="text-[#618983] text-sm font-normal leading-normal">
-                      I am happy to write the inaugural note for the website of
-                      Enactus Miranda House (MH). In the past five years that I
-                      have been actively involved with the activities of the
-                      Society , I have witnessed its steady growth. The credit
-                      for this goes to the batches of enterprising students who
-                      have contributed to its progress, with each batch passing
-                      on the baton to the next having added a number of new
-                      ideas to the pool. I need to emphasize that our Principal,
-                      Prof. Bijayalaxmi Nanda, has been very supportive and
-                      encouraged and facilitated it at every stage.
-                    </p>
-                    <p className="text-[#618983] text-sm font-normal leading-normal">
-                      The aim of Enactus is to collaborate with the marginalized
-                      sections of the population, particularly women who are
-                      unemployed and help them to carry on projects that become
-                      self-sustainable in the long-run. Enactus has attempted to
-                      provide the ideas and continues to handhold till profits
-                      are enough to sustain households. In this endeavor, a
-                      number of projects have been started and have reached
-                      different stages of maturity. This journey will be put
-                      forth in this website.
-                    </p>
-                  </div>
-                  <div className="relative aspect-video rounded-xl flex-1 min-h-[200px] overflow-hidden">
-                    <Image
-                      src={convenorImage}
-                      alt="Convenor"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
+                  <div className="flex flex-col lg:flex-row items-start justify-between gap-6 sm:gap-8">
+                    {/* Content Section */}
+                    <div className="flex flex-col gap-4 sm:gap-6 flex-[2] order-2 lg:order-1">
+                      {/* Header Info */}
+                      <div className="space-y-2">
+                        <motion.p 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          viewport={{ once: true }}
+                          className="text-[#13ebc7] text-sm font-semibold leading-normal uppercase tracking-wide"
+                        >
+                          Mrs. Malabika Pal
+                        </motion.p>
+                        <motion.p 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.3 }}
+                          viewport={{ once: true }}
+                          className="text-[#111817] text-lg sm:text-xl font-bold leading-tight"
+                        >
+                          Convenor, Enactus Miranda House
+                        </motion.p>
+                      </div>
+
+                      {/* Quote Mark */}
+                      <motion.div 
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="text-[#13ebc7] text-3xl sm:text-4xl font-serif leading-none"
+                      >
+                        "
+                      </motion.div>
+
+                      {/* Message Content */}
+                      <div className="space-y-4">
+                        <motion.p 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.5 }}
+                          viewport={{ once: true }}
+                          className="text-[#618983] text-sm sm:text-base leading-relaxed"
+                        >
+                          I am happy to write the inaugural note for the website of
+                          Enactus Miranda House (MH). In the past five years that I
+                          have been actively involved with the activities of the
+                          Society, I have witnessed its steady growth. The credit
+                          for this goes to the batches of enterprising students who
+                          have contributed to its progress, with each batch passing
+                          on the baton to the next having added a number of new
+                          ideas to the pool.
+                        </motion.p>
+                        
+                        <motion.p 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6 }}
+                          viewport={{ once: true }}
+                          className="text-[#618983] text-sm sm:text-base leading-relaxed"
+                        >
+                          I need to emphasize that our Principal,
+                          Prof. Bijayalaxmi Nanda, has been very supportive and
+                          encouraged and facilitated it at every stage.
+                        </motion.p>
+
+                        <motion.p 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.7 }}
+                          viewport={{ once: true }}
+                          className="text-[#618983] text-sm sm:text-base leading-relaxed"
+                        >
+                          The aim of Enactus is to collaborate with the marginalized
+                          sections of the population, particularly women who are
+                          unemployed and help them to carry on projects that become
+                          self-sustainable in the long-run. Enactus has attempted to
+                          provide the ideas and continues to handhold till profits
+                          are enough to sustain households. In this endeavor, a
+                          number of projects have been started and have reached
+                          different stages of maturity. This journey will be put
+                          forth in this website.
+                        </motion.p>
+                      </div>
+
+                      {/* Signature/Attribution */}
+                      <motion.div 
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-3 pt-4 border-t border-[#e5e9e9]"
+                      >
+                        <div className="w-8 sm:w-12 h-0.5 bg-[#13ebc7]" />
+                        <span className="text-[#111817] font-medium text-xs sm:text-sm">
+                          Mrs. Malabika Pal, Convenor
+                        </span>
+                      </motion.div>
+                    </div>
+
+                    {/* Image Section */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.8, delay: 0.3 }}
+                      viewport={{ once: true }}
+                      className="relative flex-1 order-1 lg:order-2 w-full sm:w-auto lg:max-w-[300px]"
+                    >
+                      <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl max-w-[250px] sm:max-w-[300px] mx-auto lg:mx-0">
+                        <Image
+                          src={convenorImage}
+                          alt="Mrs. Malabika Pal - Convenor, Enactus Miranda House"
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                          priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      </div>
+                      
+                      {/* Decorative Elements */}
+                      <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-[#13ebc7] rounded-full opacity-20" />
+                      <div className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-4 h-4 sm:w-6 sm:h-6 bg-[#13ebc7] rounded-full opacity-30" />
+                    </motion.div>
                   </div>
                 </motion.div>
               </div>
@@ -684,7 +953,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="flex justify-center">
-          <div className="flex max-w-[960px] flex-1 flex-col">
+          <div className="flex max-w-[1200px] flex-1 flex-col">
             <motion.footer
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -692,7 +961,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="flex flex-col gap-6 px-5 py-10 text-center @container"
             >
-              <div className="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 @[480px]:flex-row @[480px]:justify-around">
                 {navItems.map((item, index) => (
                   <motion.a
                     key={item.name}
@@ -700,7 +969,7 @@ export default function Home() {
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="text-[#618983] text-base font-normal leading-normal min-w-40 hover:text-[#13ebc7] transition-colors duration-200"
+                    className="text-[#618983] text-sm sm:text-base font-normal leading-normal min-w-20 sm:min-w-40 hover:text-[#13ebc7] transition-colors duration-200"
                     href={item.href}
                   >
                     {item.name}
@@ -743,7 +1012,7 @@ export default function Home() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.8 }}
                 viewport={{ once: true }}
-                className="text-[#618983] text-base font-normal leading-normal"
+                className="text-[#618983] text-sm sm:text-base font-normal leading-normal"
               >
                 © 2025 Enactus Miranda House. All rights reserved.
               </motion.p>

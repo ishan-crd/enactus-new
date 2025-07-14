@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Naavya Arya",
     position: "President",
-    image: "/NaavyaArya.heic",
+    image: "/Naavya_Arya.jpg",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const teamMembers: TeamMember[] = [
     id: 3,
     name: "Yashika Sachdeva",
     position: "General Secretary",
-    image: "/Yashika Sachdeva G....jpg",
+    image: "/Yashika Sachdeva General Secretary.jpg",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const teamMembers: TeamMember[] = [
     id: 5,
     name: "Shruti",
     position: "Social Media & Marketing Head",
-    image: "/Shruti.heic",
+    image: "/Shruti.jpg",
   },
   {
     id: 6,
@@ -73,13 +73,13 @@ const teamMembers: TeamMember[] = [
     id: 9,
     name: "Kishika",
     position: "HR & Logistics Head",
-    image: "/Kishika..jpg",
+    image: "/Kishika.jpg",
   },
   {
     id: 10,
     name: "Navya Chandok",
     position: "Project Head – Dharang",
-    image: "/Navya Chandok..png",
+    image: "/Navya Chandok.png",
   },
   {
     id: 11,
@@ -97,7 +97,7 @@ const teamMembers: TeamMember[] = [
     id: 13,
     name: "Naina Tiberwal",
     position: "Project Head – Noorani",
-    image: "/Naina Tiberwal.heic",
+    image: "/Naina Tibrewal.jpg",
   },
   {
     id: 14,
@@ -121,19 +121,13 @@ const teamMembers: TeamMember[] = [
     id: 17,
     name: "Ananya",
     position: "Research Head – Ikhtiyaar",
-    image: "/Ananya Singh.heic",
-  },
-  {
-    id: 18,
-    name: "Vidita Bajaj",
-    position: "Project Director – Riwayat",
-    image: "",
+    image: "/Ananya Singh.jpg",
   },
   {
     id: 19,
     name: "Bhumi Gaur",
     position: "Project Head – Riwayat",
-    image: "/Bhumi gaur.heic",
+    image: "/bhoomigaur.jpg",
   },
   {
     id: 20,
@@ -142,34 +136,16 @@ const teamMembers: TeamMember[] = [
     image: "/kavya singh.jpg",
   },
   {
-    id: 21,
-    name: "Anvi Chawla",
-    position: "Project Director – Nitara",
-    image: "",
-  },
-  {
-    id: 22,
-    name: "Rahnuma Firdous",
-    position: "Project Director – Nitara",
-    image: "",
-  },
-  {
-    id: 23,
-    name: "Fathima Amal",
-    position: "Project Director – Nitara",
-    image: "",
-  },
-  {
     id: 24,
     name: "Sayli Patil",
     position: "Project Head – Nitara",
-    image: "/Sayli Patil..png",
+    image: "/Sayli Patil.png",
   },
   {
     id: 25,
     name: "Gargi Pitambar Upadhyay",
     position: "Project Head – Nitara",
-    image: "/Gargi Upadhyay.heic",
+    image: "/Gargi Upadhyay.jpg",
   },
 ];
 

@@ -136,25 +136,9 @@ const SearchIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-const FilterIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    fill="currentColor"
-    viewBox="0 0 256 256"
-    className={className}
-  >
-    <path d="M230,208a8,8,0,0,1-8,8H34a8,8,0,0,1,0-16H222A8,8,0,0,1,230,208ZM66,128a8,8,0,0,0,0,16H190a8,8,0,0,0,0-16ZM98,80a8,8,0,0,0,0,16h60a8,8,0,0,0,0-16Z" />
-  </svg>
-);
-
 // Main Component
 export default function ProjectsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedStatus, setSelectedStatus] = useState("All");
-  const [searchTerm, setSearchTerm] = useState("");
 
   const navItems: NavItem[] = [
     { name: "Home", href: "/" },
@@ -164,28 +148,6 @@ export default function ProjectsPage() {
     { name: "Store", href: "/store" },
     { name: "Contact", href: "/contact" },
   ];
-
-  const categories = [
-    "All",
-    "Livelihood",
-    "Education",
-    "Healthcare",
-    "Technology",
-    "Environment",
-  ];
-  const statuses = ["All", "Active", "Completed", "Planning"];
-
-  // Filter projects
-  const filteredProjects = projects.filter((project) => {
-    const matchesCategory =
-      selectedCategory === "All" || project.category === selectedCategory;
-    const matchesStatus =
-      selectedStatus === "All" || project.status === selectedStatus;
-    const matchesSearch =
-      project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesStatus && matchesSearch;
-  });
 
   // Animation variants
   const containerVariants = {
@@ -241,17 +203,19 @@ export default function ProjectsPage() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-3 text-[#111817]"
             >
-              <div className="relative size-8">
-                <Image
-                  src={logoImage}
-                  alt="Enactus Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h2 className="text-[#111817] text-lg font-bold leading-tight tracking-[-0.015em]">
-                Enactus
-              </h2>
+              <Link href="/" className="flex items-center gap-3">
+                <div className="relative size-8">
+                  <Image
+                    src={logoImage}
+                    alt="Enactus Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h2 className="text-[#111817] text-lg font-bold leading-tight tracking-[-0.015em]">
+                  Enactus
+                </h2>
+              </Link>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -374,7 +338,7 @@ export default function ProjectsPage() {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#111817] mb-4">
                 Our Projects
@@ -385,74 +349,6 @@ export default function ProjectsPage() {
               </p>
             </motion.div>
 
-            {/* Search and Filters */}
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-8 space-y-4"
-            >
-              {/* Search Bar */}
-              <div className="relative max-w-md mx-auto">
-                <input
-                  type="text"
-                  placeholder="Search projects..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 pl-12 border border-[#f0f4f4] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#13ebc7] focus:border-transparent"
-                />
-                <SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#618983]" />
-              </div>
-
-              {/* Filters */}
-              <div className="flex flex-wrap justify-center gap-4">
-                {/* Category Filter */}
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-sm font-medium text-[#618983] flex items-center">
-                    <FilterIcon className="mr-2" />
-                    Category:
-                  </span>
-                  {categories.map((category) => (
-                    <motion.button
-                      key={category}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => setSelectedCategory(category)}
-                      className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${
-                        selectedCategory === category
-                          ? "bg-[#13ebc7] text-[#111817]"
-                          : "bg-[#f0f4f4] text-[#618983] hover:bg-[#e5e9e9]"
-                      }`}
-                    >
-                      {category}
-                    </motion.button>
-                  ))}
-                </div>
-
-                {/* Status Filter */}
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-sm font-medium text-[#618983]">
-                    Status:
-                  </span>
-                  {statuses.map((status) => (
-                    <motion.button
-                      key={status}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => setSelectedStatus(status)}
-                      className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${
-                        selectedStatus === status
-                          ? "bg-[#13ebc7] text-[#111817]"
-                          : "bg-[#f0f4f4] text-[#618983] hover:bg-[#e5e9e9]"
-                      }`}
-                    >
-                      {status}
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
             {/* Projects Grid */}
             <motion.div
               variants={containerVariants}
@@ -460,7 +356,7 @@ export default function ProjectsPage() {
               animate="visible"
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
             >
-              {filteredProjects.map((project) => (
+              {projects.map((project) => (
                 <motion.div
                   key={project.id}
                   variants={itemVariants}
@@ -512,22 +408,6 @@ export default function ProjectsPage() {
                 </motion.div>
               ))}
             </motion.div>
-
-            {/* No Results Message */}
-            {filteredProjects.length === 0 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-12"
-              >
-                <h3 className="text-xl font-medium text-[#618983] mb-2">
-                  No projects found
-                </h3>
-                <p className="text-[#618983]">
-                  Try adjusting your search criteria or filters.
-                </p>
-              </motion.div>
-            )}
 
             {/* Call to Action */}
             <motion.div
