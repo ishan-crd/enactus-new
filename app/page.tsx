@@ -41,32 +41,28 @@ const projects: Project[] = [
     id: 1,
     name: "Project Dharang",
     description: "Empowering underserved communities",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA5WTNCzZMmRaJf_Jek09hFujPFlzfDPfMTdVY6CHwjlMOvH_WukIwfuF3Csr0LkSMkSH0P8-hYmZha7KwDO71X812IdHeXCJ7ENAd1yf7-jtLptVcUz-LBJZ1lt08EP2u_RPjPZlw8VVUYJoSB0_19kqfZGn-_1Vv_kILcgfL0fPYRlzfZf_jf2xQdFNf5OJ6Mptd9FSAMiqfa2gfALKKqAVRXVaAaQUmTyvSadUoaW1OuX3udEcaK6aEGLJNqIYLJPqHaWpBUzMBa",
+    image: "/dharang.jpg",
     slug: "project-bloom",
   },
   {
     id: 2,
     name: "Project Ikhtiyaar",
     description: "Igniting creativity and innovation in education.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmerSW34sHGU03nZjIOTaycE71y4zZ64H25Il53KUt0WjK3R7-v1LF06xpuKLrZP_-xZmoyc8DsDMnEhjc8EWN_JR1I0Gl3_PKfRYzwkLJWqubUVB7ggNUNfpu3G__-r2n-DyoKNSFPtJeSJ2smUTlb_e9OLsIhPF5uwrMzYWpD5obmr8UBvKNaSA8EWIyfNKMOCG9YKTAKzUpcougtAMFuoxSS0ZKARpzvhcwW-_0uSkTnzTmBTrd2157m5qgfHsWLJfa4Ncdpvk",
+    image: "/ikhtiyaar.jpg",
     slug: "project-spark",
   },
   {
     id: 3,
     name: "Project Riwayat",
     description: "Promoting health and wellness in underserved communities.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD_8nmiTUFmrokd-cSid9h55yJEwOn1IxxV-fi9uolVFqIFjfo4IenjX_BSa_w7wVgoy9Afz6rWlQ-FYlDmQwLt91gas-Xwd2KMNtg4x8W-Z_M1RYOvYoBIauRdmVMussGUCMMNUcsO_5S9a2-Q-d2o9M73nN5tvkgXOnazstCbRRK9OumuA0qENauhC7M02_lLar1MKAjS_dvpwR5_WP9Y4O3uz1ljv-NuGKeCZlPDaB6foKsoKKwYL_PT6LrjrrgKA7iZ7xrP7uDJ",
+    image: "/riwayat.jpg",
     slug: "project-thrive",
   },
   {
     id: 4,
     name: "Project Noorani",
     description: "Connecting people through technology and social initiatives.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDApscKVn5Qu-YIpGPKfU7PX4LnQVdDuYW2PkZ1O9oStGJ92LMGyUiDfMr40NAVWfjt8M0eVhJdp0nnZtc4rRz03YxaO7TAu3_59YiyI9olzVF1ocXx1LvsEcn3hpdXUxNB2jPO2DcjvDiUzcolvmjRgNsGWMf04HBmYfxiXW3CNXXahBhfq28eSoHQt7VjWGkbWQwUczIyg6iR4_RAQSGYJWQw9zezAvBTMlXtt2S_P4shCb2_1zR611GiiMEgsXscfJn1C7A5MEWV",
+    image: "/Noorani.jpg",
     slug: "project-connect",
   },
 ];
