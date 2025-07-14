@@ -35,18 +35,14 @@ const projects: Project[] = [
     description: "Empowering underserved communities",
     fullDescription:
       "Project Bloom focuses on empowering local artisans by providing them with sustainable livelihood opportunities through traditional crafts. We work closely with women artisans to help them develop their skills, access new markets, and build sustainable businesses. Our initiative includes training workshops, market linkage programs, and financial literacy sessions.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA5WTNCzZMmRaJf_Jek09hFujPFlzfDPfMTdVY6CHwjlMOvH_WukIwfuF3Csr0LkSMkSH0P8-hYmZha7KwDO71X812IdHeXCJ7ENAd1yf7-jtLptVcUz-LBJZ1lt08EP2u_RPjPZlw8VVUYJoSB0_19kqfZGn-_1Vv_kILcgfL0fPYRlzfZf_jf2xQdFNf5OJ6Mptd9FSAMiqfa2gfALKKqAVRXVaAaQUmTyvSadUoaW1OuX3udEcaK6aEGLJNqIYLJPqHaWpBUzMBa",
+    image: "/dhreya.jpg",
     slug: "project-bloom",
     category: "Livelihood",
     status: "Active",
     impact: "Income increase of 150%",
     beneficiaries: 120,
     startDate: "2023-03-15",
-    images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA5WTNCzZMmRaJf_Jek09hFujPFlzfDPfMTdVY6CHwjlMOvH_WukIwfuF3Csr0LkSMkSH0P8-hYmZha7KwDO71X812IdHeXCJ7ENAd1yf7-jtLptVcUz-LBJZ1lt08EP2u_RPjPZlw8VVUYJoSB0_19kqfZGn-_1Vv_kILcgfL0fPYRlzfZf_jf2xQdFNf5OJ6Mptd9FSAMiqfa2gfALKKqAVRXVaAaQUmTyvSadUoaW1OuX3udEcaK6aEGLJNqIYLJPqHaWpBUzMBa",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmerSW34sHGU03nZjIOTaycE71y4zZ64H25Il53KUt0WjK3R7-v1LF06xpuKLrZP_-xZmoyc8DsDMnEhjc8EWN_JR1I0Gl3_PKfRYzwkLJWqubUVB7ggNUNfpu3G__-r2n-DyoKNSFPtJeSJ2smUTlb_e9OLsIhPF5uwrMzYWpD5obmr8UBvKNaSA8EWIyfNKMOCG9YKTAKzUpcougtAMFuoxSS0ZKARpzvhcwW-_0uSkTnzTmBTrd2157m5qgfHsWLJfa4Ncdpvk",
-    ],
+    images: ["/dhreya.jpg"],
   },
   {
     id: 2,
@@ -54,17 +50,14 @@ const projects: Project[] = [
     description: "Igniting creativity and innovation in education.",
     fullDescription:
       "Project Spark aims to revolutionize education in underprivileged communities by introducing innovative teaching methods and digital literacy programs. We work with local schools to implement creative learning techniques, provide educational resources, and train teachers in modern pedagogical approaches.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmerSW34sHGU03nZjIOTaycE71y4zZ64H25Il53KUt0WjK3R7-v1LF06xpuKLrZP_-xZmoyc8DsDMnEhjc8EWN_JR1I0Gl3_PKfRYzwkLJWqubUVB7ggNUNfpu3G__-r2n-DyoKNSFPtJeSJ2smUTlb_e9OLsIhPF5uwrMzYWpD5obmr8UBvKNaSA8EWIyfNKMOCG9YKTAKzUpcougtAMFuoxSS0ZKARpzvhcwW-_0uSkTnzTmBTrd2157m5qgfHsWLJfa4Ncdpvk",
+    image: "/ikhtiyaar.jpg",
     slug: "project-spark",
     category: "Education",
     status: "Active",
     impact: "Improved learning outcomes by 40%",
     beneficiaries: 300,
     startDate: "2023-01-20",
-    images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmerSW34sHGU03nZjIOTaycE71y4zZ64H25Il53KUt0WjK3R7-v1LF06xpuKLrZP_-xZmoyc8DsDMnEhjc8EWN_JR1I0Gl3_PKfRYzwkLJWqubUVB7ggNUNfpu3G__-r2n-DyoKNSFPtJeSJ2smUTlb_e9OLsIhPF5uwrMzYWpD5obmr8UBvKNaSA8EWIyfNKMOCG9YKTAKzUpcougtAMFuoxSS0ZKARpzvhcwW-_0uSkTnzTmBTrd2157m5qgfHsWLJfa4Ncdpvk",
-    ],
+    images: ["/ikhtiyaar.jpg"],
   },
   {
     id: 3,
@@ -72,17 +65,14 @@ const projects: Project[] = [
     description: "Promoting health and wellness in underserved communities.",
     fullDescription:
       "Project Thrive addresses healthcare challenges in underserved communities by promoting preventive healthcare, nutrition awareness, and mental wellness. Our program includes health camps, nutrition workshops, mental health awareness sessions, and establishing community health support groups.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD_8nmiTUFmrokd-cSid9h55yJEwOn1IxxV-fi9uolVFqIFjfo4IenjX_BSa_w7wVgoy9Afz6rWlQ-FYlDmQwLt91gas-Xwd2KMNtg4x8W-Z_M1RYOvYoBIauRdmVMussGUCMMNUcsO_5S9a2-Q-d2o9M73nN5tvkgXOnazstCbRRK9OumuA0qENauhC7M02_lLar1MKAjS_dvpwR5_WP9Y4O3uz1ljv-NuGKeCZlPDaB6foKsoKKwYL_PT6LrjrrgKA7iZ7xrP7uDJ",
+    image: "/muraad.jpg",
     slug: "project-thrive",
     category: "Healthcare",
     status: "Active",
     impact: "Reached 2000+ individuals",
     beneficiaries: 2000,
     startDate: "2022-11-10",
-    images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD_8nmiTUFmrokd-cSid9h55yJEwOn1IxxV-fi9uolVFqIFjfo4IenjX_BSa_w7wVgoy9Afz6rWlQ-FYlDmQwLt91gas-Xwd2KMNtg4x8W-Z_M1RYOvYoBIauRdmVMussGUCMMNUcsO_5S9a2-Q-d2o9M73nN5tvkgXOnazstCbRRK9OumuA0qENauhC7M02_lLar1MKAjS_dvpwR5_WP9Y4O3uz1ljv-NuGKeCZlPDaB6foKsoKKwYL_PT6LrjrrgKA7iZ7xrP7uDJ",
-    ],
+    images: ["/muraad.jpg"],
   },
   {
     id: 4,
@@ -90,17 +80,14 @@ const projects: Project[] = [
     description: "Connecting people through technology and social initiatives.",
     fullDescription:
       "Project Connect bridges the digital divide by providing technology access and digital literacy training to marginalized communities. We establish computer centers, conduct digital literacy workshops, and create platforms for community networking and knowledge sharing.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDApscKVn5Qu-YIpGPKfU7PX4LnQVdDuYW2PkZ1O9oStGJ92LMGyUiDfMr40NAVWfjt8M0eVhJdp0nnZtc4rRz03YxaO7TAu3_59YiyI9olzVF1ocXx1LvsEcn3hpdXUxNB2jPO2DcjvDiUzcolvmjRgNsGWMf04HBmYfxiXW3CNXXahBhfq28eSoHQt7VjWGkbWQwUczIyg6iR4_RAQSGYJWQw9zezAvBTMlXtt2S_P4shCb2_1zR611GiiMEgsXscfJn1C7A5MEWV",
+    image: "/zaffran.png",
     slug: "project-connect",
     category: "Technology",
     status: "Planning",
     impact: "Digital literacy for 500+ people",
     beneficiaries: 500,
     startDate: "2024-02-01",
-    images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDApscKVn5Qu-YIpGPKfU7PX4LnQVdDuYW2PkZ1O9oStGJ92LMGyUiDfMr40NAVWfjt8M0eVhJdp0nnZtc4rRz03YxaO7TAu3_59YiyI9olzVF1ocXx1LvsEcn3hpdXUxNB2jPO2DcjvDiUzcolvmjRgNsGWMf04HBmYfxiXW3CNXXahBhfq28eSoHQt7VjWGkbWQwUczIyg6iR4_RAQSGYJWQw9zezAvBTMlXtt2S_P4shCb2_1zR611GiiMEgsXscfJn1C7A5MEWV",
-    ],
+    images: ["/zaffran.png"],
   },
   {
     id: 5,
@@ -108,19 +95,62 @@ const projects: Project[] = [
     description: "Supporting child development and early education.",
     fullDescription:
       "Project Nurture focuses on early childhood development and education in disadvantaged communities. We provide preschool education, parenting workshops, nutritional support, and create safe learning environments for children aged 3-6 years.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBpQIlpyJirmYYPk_QaLwp0mXq1uE6z5U2QOmy27uFN_rMMbu5x9kab1jMvuszEXeRvIYPmjsJZkCTYRfnXNlIYRQVtXEJcMxfGMf-dC9t_mQSxAWp6fj1IILkt38VphmeAgC8IIB2hfv8EkgHFikaeva4AJ9xN9qSyp4yRHjN5Jfhyte_raLx2WBGHAiqeBJg-9obk9PL36g06svBW_wIWGol1iPUFLxvYy8YVucw0mz_eG_lOC2S8vNEvS9hUP2f7CQoYxC5C19ji",
+    image: "/zaffran.png",
     slug: "project-nurture",
     category: "Education",
     status: "Completed",
     impact: "150 children benefited",
     beneficiaries: 150,
     startDate: "2022-06-15",
-    images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBpQIlpyJirmYYPk_QaLwp0mXq1uE6z5U2QOmy27uFN_rMMbu5x9kab1jMvuszEXeRvIYPmjsJZkCTYRfnXNlIYRQVtXEJcMxfGMf-dC9t_mQSxAWp6fj1IILkt38VphmeAgC8IIB2hfv8EkgHFikaeva4AJ9xN9qSyp4yRHjN5Jfhyte_raLx2WBGHAiqeBJg-9obk9PL36g06svBW_wIWGol1iPUFLxvYy8YVucw0mz_eG_lOC2S8vNEvS9hUP2f7CQoYxC5C19ji",
-    ],
+    images: ["/zaffran.png"],
+  },
+  {
+    id: 6,
+    name: "Project Dhreya",
+    description: "Aimed to refine the skills of the cobbler community",
+    fullDescription:
+      "Initially launched in 2017, Project Dhreya aimed to refine the skills of the cobbler community, particularly by engaging women in the stitching of diaries and notebooks, promoting both empowerment and recycling practices.In 2019, the project evolved to utilise crop waste for producing biomass briquettes, promoting renewable energy and efficient waste management.",
+    image: "/zaffran.png",
+    slug: "project-nurture",
+    category: "Education",
+    status: "Completed",
+    impact: "150 children benefited",
+    beneficiaries: 150,
+    startDate: "2022-06-15",
+    images: ["/zaffran.png"],
+  },
+  {
+    id: 7,
+    name: "Project Inara",
+    description: "Focused on manufacturing solar-powered bulbs",
+    fullDescription:
+      "An entrepreneurial venture focused on manufacturing solar-powered bulbs, Project Inara strived to provide sustainable lighting solutions to unilluminated areas at affordable rates, thus advancing clean energy access.",
+    image: "/zaffran.png",
+    slug: "project-nurture",
+    category: "Education",
+    status: "Completed",
+    impact: "150 children benefited",
+    beneficiaries: 150,
+    startDate: "2022-06-15",
+    images: ["/zaffran.png"],
+  },
+  {
+    id: 8,
+    name: "Project Muraad",
+    description: "Addresses the escalating issue of plastic waste",
+    fullDescription:
+      "Project Murad addresses the escalating issue of plastic waste by converting single-use and multi-layered plastics into durable bricks, paving the way for innovative waste-to-resource solutions.",
+    image: "/zaffran.png",
+    slug: "project-nurture",
+    category: "Education",
+    status: "Completed",
+    impact: "150 children benefited",
+    beneficiaries: 150,
+    startDate: "2022-06-15",
+    images: ["/zaffran.png"],
   },
 ];
+
 
 // Icons
 const SearchIcon: React.FC<{ className?: string }> = ({ className }) => (

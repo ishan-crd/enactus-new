@@ -248,9 +248,13 @@ export default function Home() {
   return (
     <div
       className="relative flex min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
-      style={{ fontFamily: '"Spline Sans", "Noto Sans", sans-serif' }}
+      style={{ 
+        fontFamily: '"Spline Sans", "Noto Sans", sans-serif',
+        WebkitOverflowScrolling: 'touch',
+        overflowY: 'auto'
+      }}
     >
-      <div className="layout-container flex flex-col flex-grow">
+      <div className="layout-container flex flex-col flex-grow" style={{ minHeight: '100vh', overflowY: 'auto' }}>
         {/* Navbar */}
         <motion.header
           initial={{ y: -100, opacity: 0 }}
@@ -390,7 +394,10 @@ export default function Home() {
           </AnimatePresence>
         </motion.header>
 
-        <div className="px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-40 flex flex-1 justify-center py-5">
+        <div 
+          className="px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-40 flex flex-1 justify-center py-5"
+          style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}
+        >
           <div className="layout-content-container flex flex-col max-w-[1200px] flex-1">
             {/* Hero Section */}
             <div className="@container">
