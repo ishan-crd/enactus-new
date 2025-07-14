@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Naavya Arya",
     position: "President",
-    image: "/Naavya Arya.heic",
+    image: "/NaavyaArya.heic",
   },
   {
     id: 2,
